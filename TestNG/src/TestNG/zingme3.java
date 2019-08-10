@@ -130,7 +130,7 @@ public class zingme3 {
 	public void aftertest() {
 		
 		System.out.println("da close");
-		//driver.close();
+		driver.close();
 	}
   
 }
