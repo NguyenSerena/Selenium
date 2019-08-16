@@ -6,10 +6,10 @@ package TestNG;
 //import static org.hamcrest.core.IsNot.not;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 //import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
-
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 //import org.openqa.selenium.support.ui.ExpectedConditions;
 //import org.openqa.selenium.support.ui.WebDriverWait;
@@ -28,18 +28,18 @@ public class IDE1 {
 	@BeforeTest
 	public void setUp() {
 		
-		driver = new FirefoxDriver();
+		
 		//System.setProperty("webdriver.chrome.driver", "E:\\Selenium\\chromedriver.exe");
-		System.setProperty("webdriver.gecko.driver", "D:\\Automation testing_doc\\geckodriver-v0.24.0-win64\\geckodriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\Automation testing_doc\\chromedriver.exe");
+		driver = new ChromeDriver();
+		
 		js = (JavascriptExecutor) driver;
 		new HashMap<String, Object>();
 		
 	}
 
-	@AfterTest
-	public void tearDown() {
-		driver.quit();
-	}
+	
+	
 
 	@Test
 	public void tC3() {
@@ -201,8 +201,11 @@ public class IDE1 {
 		driver.findElement(By.cssSelector(".bx-notifier-item-224 .bx-notifier-item-text")).click();
 		driver.findElement(By.linkText("Close")).click();
 	}
+	@AfterTest
+	public void tearDown() {
+		driver.quit();
 }
-
+}
 
 
 
